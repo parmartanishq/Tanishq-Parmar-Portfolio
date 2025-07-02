@@ -1,0 +1,183 @@
+.exp_sec {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #F9FAFB; /* subtle light gray background */
+    padding: 20px;
+}
+
+._header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    /*margin-top: 30px;*/
+}
+
+._heading {
+    font-size: clamp(1.45rem, 4vw, 1.875rem);
+    /*font-size: 30px;*/
+    margin: 2px 30px;
+    padding: 2px 5px;
+    color: #1F2937; /* strong dark gray for headings */
+    border-bottom: 3px solid #3B82F6;
+    display: inline-block;
+    transition: font-size 0.3s ease;
+    text-align: center;
+}
+._expDecor{
+    @media (width<=45em) {
+        margin: 30px 1px;
+    }
+    @media (width>45em) {
+       margin: 20px;
+    }
+}
+
+._expSpan {
+    display: flex;
+    justify-content: center;
+    @media(width <= 768px){
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+        position: relative;
+    }
+}
+
+._expDiv {
+    display: grid;
+    grid-template-rows: 1fr max-content 1fr;
+    row-gap: 10px;
+    flex-direction: column;
+    font-size: 15px;
+    color: #374151; /* readable medium-dark gray for content */
+
+    /* Mobile/Tablet: Vertical timeline layout */
+    @media(width <= 768px){
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        grid-template-rows: none;
+        row-gap: 0;
+    }
+
+    /* Desktop: Horizontal timeline layout */
+    @media(width > 768px){
+        grid-template-rows: 1fr max-content 1fr;
+    }
+}
+
+._expCard {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 30px 1px;
+    border-radius: 16px; /* smooth rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* subtle card shadow */
+    transition: box-shadow 0.3s ease;
+
+    /* Mobile/Tablet: Card positioning */
+    @media(width <= 768px){
+        margin: 0 0 0 20px;
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+._expCard:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+._expDate {
+    margin-top: 20px;
+    color: #6B7280; /* muted text for date/location */
+}
+
+._dot {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #3B82F6; /* primary blue for timeline dot */
+    border: 3px solid #ffffff; /* optional white ring */
+    box-shadow: 0 0 0 3px #cce0ff; /* soft outer glow effect */
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+._line {
+    background: #CBD5E1; /* very soft blue-gray timeline line */
+
+    /* Mobile/Tablet: Vertical line */
+    @media(width <= 768px){
+        width: 2px;
+        height: 60px;
+        margin: 5px auto;
+        position: relative;
+    }
+
+    /* Desktop: Horizontal line */
+    @media(width > 768px){
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+    }
+}
+
+._expBor {
+    align-items: center;
+
+    /* Mobile/Tablet: Vertical timeline connector */
+    @media(width <= 768px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        position: relative;
+    }
+
+    /* Desktop: Horizontal timeline connector */
+    @media(width > 768px){
+        display: flex;
+    }
+}
+
+/* Continuous vertical line for mobile - positioned to go through dot centers */
+@media(width <= 768px){
+    ._expSpan::before {
+        content: '';
+        position: absolute;
+        left: 32px; /* Adjusted to account for padding and center the line through dots */
+        top: 25px; /* Start from center of first dot */
+        bottom: 25px; /* End at center of last dot */
+        width: 2px;
+        background: #CBD5E1;
+        z-index: 1;
+    }
+
+    /* Hide individual lines since we have the continuous one */
+    ._expDiv ._line {
+        background: transparent; /* Make individual lines invisible */
+    }
+
+    /* Hide the line for the last item completely */
+    ._expDiv:last-child ._line {
+        display: none;
+    }
+}
+
+/* Mobile-specific adjustments for better spacing */
+@media(width <= 768px){
+    ._expSpan {
+        width: 100%;
+        max-width: none;
+    }
+
+    ._expDiv {
+        width: 100%;
+        max-width: none;
+    }
+}

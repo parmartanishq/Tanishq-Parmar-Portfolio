@@ -1,0 +1,15 @@
+.outer{
+    display: flex;
+    flex-direction: column;
+}
+.container-section{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    grid-auto-rows: 1fr;
+    width: 12rem;
+}
+._card {
+    border: 1px solid rgb(231, 231, 231);
+    background-color: lightgray;
+}

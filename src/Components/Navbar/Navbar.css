@@ -1,0 +1,56 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F9FAFB; /* soft light background */
+    padding: 15px 5%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* subtle bottom shadow */
+}
+
+/*.navbar.dark {*/
+/*    background: #111827; !* deep gray for dark mode if toggled *!*/
+/*}*/
+
+._txt {
+    font-size: 20px;
+    margin: 15px;
+    cursor: pointer;
+    color: #1F2937; /* strong text */
+    font-weight: 600;
+}
+
+._logo {
+    width: 60px;
+    cursor: pointer;
+}
+
+._nav {
+    flex: 1;
+    list-style: none;
+    text-align: center;
+}
+
+._nav li {
+    display: inline-block;
+    margin: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #1F2937; /* readable nav link text */
+    transition: color 0.2s ease;
+}
+
+._nav li:hover {
+    color: #2563EB; /* primary blue on hover */
+}
+
+._toggle-icon {
+    width: 30px;
+    cursor: pointer;
+    /* makes dark icon visible on light background */
+    transition: transform 0.2s ease;
+}
+
+._toggle-icon:hover {
+    transform: scale(1.1);
+}
