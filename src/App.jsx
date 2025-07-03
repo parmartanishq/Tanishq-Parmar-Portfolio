@@ -7,7 +7,8 @@ import Skills from "./Components/Skills/Skills";
 import Certificates from "./Components/Certificates/Certificates";
 import Publications from "./Components/Publications/Publications";
 import Awards from "./Components/Awards/Awards";
-import Projects from "./Components/Projects/Projects.jsx";
+import Projects from "./Components/Projects/Projects";
+import Footer from "./Components/Footer/Footer";
 
 const App = () =>  {
     const [theme, setTheme] = useState('light');
@@ -37,6 +38,9 @@ const App = () =>  {
         </div>
       <div>
           <Awards/>
+      </div>
+      <div>
+          <Footer/>
       </div>
     </div>
 
