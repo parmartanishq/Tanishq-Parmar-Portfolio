@@ -13,36 +13,44 @@ import Footer from "./Components/Footer/Footer";
 const App = () =>  {
     const [theme, setTheme] = useState('light');
   return (
-    <div className={`container ${theme}`}>
+    <section className={`container ${theme}`}>
 
-      <div >
+      <section>
         <Navbar theme={theme} setTheme={setTheme} />
-      </div>
-      <div>
-          <AboutSec />
-      </div>
-        <div>
+      </section>
+        <section id="home">
+            <AboutSec />
+        </section>
+
+        <section id="experience">
             <Experience />
-        </div>
-      <div>
-          <Skills />
-      </div>
-      <div>
-          <Certificates />
-      </div>
-      <div>
-          <Publications />
-      </div>
-        <div>
+        </section>
+
+        <section id="skills">
+            <Skills />
+        </section>
+
+        <section id="certification">
+            <Certificates />
+        </section>
+
+        <section id="publications">
+            <Publications />
+        </section>
+
+        <section id="projects">
             <Projects />
-        </div>
-      <div>
-          <Awards/>
-      </div>
-      <div>
-          <Footer/>
-      </div>
-    </div>
+        </section>
+
+        <section id="awards">
+            <Awards />
+        </section>
+
+        <section id="contact">
+            <Footer />
+        </section>
+
+    </section>
 
   )
 }

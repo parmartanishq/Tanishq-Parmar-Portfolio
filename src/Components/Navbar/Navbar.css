@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     background: #F9FAFB; /* soft light background */
-    padding: 15px 5%;
+    padding: 5px 5%;
     /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); !* subtle bottom shadow *!*/
     position: fixed; /* Make navbar sticky */
     top: 0;
@@ -12,7 +12,7 @@
     right: 0;
     z-index: 1000;
     backdrop-filter: blur(10px); /* Add blur effect for modern look */
-    background: rgba(249, 250, 251, 0.95); /* Semi-transparent background */
+    /*background: rgba(249, 250, 251, 0.95); !* Semi-transparent background *!*/
 }
 
 /*.navbar.dark {*/
@@ -51,8 +51,8 @@
 
 ._nav li {
     display: inline-block;
-    margin: 15px 20px;
-    font-size: 18px;
+    margin: 15px 2px;
+    font-size: 16px;
     cursor: pointer;
     color: #1F2937; /* readable nav link text */
     transition: all 0.3s ease;
@@ -311,7 +311,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
     /* Hide desktop navbar */
     .navbar {
         display: none;

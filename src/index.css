@@ -5,10 +5,15 @@
     font-family: 'Poppins', sans-serif;
 
 }
+
+body{
+    background: #F9FAFB;
+}
+
 .container{
     width: 100%;
     height: 100%;
-    background: #ecbcbc;
+   background: #F9FAFB;
     transition: 0.5s;
 
 }
