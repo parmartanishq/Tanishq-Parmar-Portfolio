@@ -8,7 +8,7 @@ import img_swami from '../../assets/AwardsImages/Swami.jpg';
 import img_agnel from '../../assets/AwardsImages/Agnel.jpg';
 import img_jonda from '../../assets/AwardsImages/Jondhle.jpg';
 import img_thakur from '../../assets/AwardsImages/Thakur.jpg';
-import logo_external_link from "../../assets/logo_external_link.svg";
+// import logo_external_link from "../../assets/logo_external_link.svg";
 const Awards = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [touchStart, setTouchStart] = useState(null);
@@ -20,9 +20,7 @@ const Awards = () => {
             id: 1,
             title: "IEI NMLC-FCRIT Excellence Award for Academic Excellence (Polytechnic - Regional)",
             image: img_award,
-            description: "Honored under the IEI NMLC-FCRIT Excellence Awards 2024, jointly presented by The Institution of Engineers \n" +
-                "(India)  and Agnel Charities' Fr. C. Rodrigues Institute of Technology, Vashi, for exceptional academic performance \n" +
-                "at Agnel Polytechnic, Vashi ,Navi Mumbai. ",
+            description: "Honored with the IEI NMLC-FCRIT Excellence Award 2024 by The Institution of Engineers (India) and Fr. C. Rodrigues Institute of Technology, Vashi, for outstanding academic performance at Agnel Polytechnic, Navi Mumbai.",
             date: "🏆 September 18, 2024",
             link: "https://www.linkedin.com/posts/tanishqparmar_i-am-truly-honored-to-receive-the-prestigious-activity-7287049662824419328-9EmH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEHL91kBoa83laOi5Quosyj-G3ulaCBW7Dk"
         },
