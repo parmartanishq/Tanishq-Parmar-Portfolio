@@ -5,7 +5,14 @@
     justify-content: space-between;
     background: #F9FAFB; /* soft light background */
     padding: 15px 5%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* subtle bottom shadow */
+    /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); !* subtle bottom shadow *!*/
+    position: fixed; /* Make navbar sticky */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Add blur effect for modern look */
+    background: rgba(249, 250, 251, 0.95); /* Semi-transparent background */
 }
 
 /*.navbar.dark {*/
@@ -23,12 +30,23 @@
 ._logo {
     width: 60px;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+._logo:hover {
+    transform: scale(1.05);
+}
+
+._nav-desktop {
+    flex: 1;
 }
 
 ._nav {
     flex: 1;
     list-style: none;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 ._nav li {
@@ -37,20 +55,374 @@
     font-size: 18px;
     cursor: pointer;
     color: #1F2937; /* readable nav link text */
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
 }
 
 ._nav li:hover {
     color: #2563EB; /* primary blue on hover */
+    transform: translateY(-2px);
 }
 
+._nav li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #2563EB;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+._nav li:hover::after {
+    width: 80%;
+}
+
+/* Simple Theme Toggle Button Animation - NO ROTATION */
 ._toggle-icon {
     width: 30px;
+    height: 30px;
     cursor: pointer;
-    /* makes dark icon visible on light background */
-    transition: transform 0.2s ease;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 ._toggle-icon:hover {
     transform: scale(1.1);
+}
+
+._toggle-icon:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+}
+
+._toggle-icon img {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+._toggle-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* Mobile Menu Button */
+._mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+._mobile-menu-btn:hover {
+    transform: scale(1.05);
+}
+
+._hamburger {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+}
+
+._hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #1F2937;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+._hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+._hamburger span:nth-child(2) {
+    top: 8px;
+}
+
+._hamburger span:nth-child(3) {
+    top: 16px;
+}
+
+._hamburger-open span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+
+._hamburger-open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+._hamburger-open span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+/* Mobile Navigation */
+._nav-mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(249, 250, 251, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+._nav-mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+._nav-mobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+._nav-mobile li {
+    display: block;
+    margin: 0;
+    padding: 15px 5%;
+    font-size: 18px;
+    cursor: pointer;
+    color: #1F2937;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(31, 41, 55, 0.1);
+}
+
+._nav-mobile li:last-child {
+    border-bottom: none;
+}
+
+._nav-mobile li:hover {
+    color: #2563EB;
+    background: rgba(37, 99, 235, 0.05);
+    padding-left: 8%;
+}
+
+/* Mobile Bottom Navigation */
+._mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(249, 250, 251, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 16px 0 20px 0;
+}
+
+._mobile-bottom-nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Right buttons container */
+._mobile-right-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Mobile logo in bottom nav - EXTREME LEFT */
+._mobile-logo {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+._mobile-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+._mobile-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile theme toggle - Simple animation, NO ROTATION */
+._mobile-toggle {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+._mobile-toggle:hover {
+    transform: scale(1.1);
+}
+
+._mobile-toggle:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+}
+
+._mobile-toggle img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+._mobile-toggle:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Hide desktop navbar */
+    .navbar {
+        display: none;
+    }
+
+    /* Show mobile bottom navigation */
+    ._mobile-bottom-nav {
+        display: block;
+        padding: 5px;
+    }
+
+    /* Show mobile menu */
+    ._nav-mobile {
+        display: block;
+        position: fixed;
+        bottom: 90px;
+        top: auto;
+        transform: translateY(10px);
+    }
+
+    ._mobile-menu-btn {
+        display: block;
+    }
+
+    /* Add bottom padding to body for bottom nav */
+    body {
+        padding-bottom: 50px !important;
+        padding-top: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    ._mobile-bottom-nav {
+        padding: 5px;
+    }
+
+    ._mobile-bottom-nav-content {
+        padding: 0 10px;
+    }
+
+    ._mobile-right-buttons {
+        gap: 10px;
+    }
+
+    ._mobile-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    ._mobile-logo img {
+        width: 36px;
+        height: 36px;
+    }
+
+    ._mobile-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    ._mobile-toggle img {
+        width: 22px;
+        height: 22px;
+    }
+
+    ._hamburger {
+        width: 22px;
+        height: 16px;
+    }
+
+    ._nav-mobile li {
+        font-size: 16px;
+        padding: 12px 5%;
+    }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add padding to body to account for fixed navbar (desktop only) */
+@media (min-width: 769px) {
+    body {
+        padding-top: 80px;
+    }
+}
+
+/* Active state for navigation items */
+._nav li.active {
+    color: #2563EB;
+    background: rgba(37, 99, 235, 0.1);
+}
+
+._nav li.active::after {
+    width: 80%;
+}
+
+._nav-mobile li.active {
+    color: #2563EB;
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* Scroll offset adjustment for sections */
+@media (min-width: 769px) {
+    section {
+        scroll-margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        scroll-margin-bottom: 90px;
+    }
 }
