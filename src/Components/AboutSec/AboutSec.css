@@ -85,7 +85,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px 0px;
+    padding: 15px 1px;
     color: #374151; /* Medium gray for description text */
     @media (width<=45em) {
         align-items: center;
@@ -132,10 +132,14 @@
     cursor: pointer;
     transition: all 0.3s ease;
 
+
 }
 
 ._buttonResume span {
     color: white;
+}
+._buttonResume a{
+    text-decoration: none;
 }
 
 ._buttonResume:hover {

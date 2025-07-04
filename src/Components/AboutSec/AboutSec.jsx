@@ -28,12 +28,14 @@ const AboutSec = () => {
                     <p>B.Tech student in AI and Data Science with a focus on practical, user-driven solutions.Builds intelligent systems like PaperGen that combine machine learning, backend development, and clean UI design.</p>
                 </div>
                 <div className='_buttonResume'>
+                    <a href="/files/TanishqParmarResume.pdf" download={'TanishqParmar_Resume'}>
                     {/*<div >*/}
                     {/*    <img src={logo_download} className='_downResume' style={{ width: '22px', height: '20px' }} />*/}
-                    {/*</div>*/}
-                    <span>
+                    {/*</div>*/}<span>
+
                     Resume
                 </span>
+                    </a>
                 </div>
             </div>
 
