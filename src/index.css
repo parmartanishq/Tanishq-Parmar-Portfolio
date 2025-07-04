@@ -14,8 +14,12 @@ body{
     width: 100%;
     height: 100%;
    background: #F9FAFB;
-    transition: 0.5s;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in;;
 
+}
+.container.content-loaded {
+    opacity: 1;
 }
 .container.dark{
     background: #000;
