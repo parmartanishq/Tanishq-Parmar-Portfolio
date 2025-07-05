@@ -90,15 +90,9 @@ const Experience = ({ theme }) => {
             location: 'Navi Mumbai',
         },
         {
-            title: 'Java Programming Intern',
-            company: 'InternPe',
-            date: 'April 2023',
-            location: 'Remote',
-        },
-        {
-            title: 'Android Development Intern',
-            company: 'DeveloperOnGo Pvt. Ltd.',
-            date: 'June - July 2023',
+            title: 'IOT Understanding: Workshop',
+            company: ' Electronics Pvt. Ltd.',
+            date: 'January 2024',
             location: 'Navi Mumbai',
         },
         {
@@ -107,26 +101,33 @@ const Experience = ({ theme }) => {
             date: 'April 2023',
             location: 'Remote',
         },
+
+        {
+            title: 'Java Programming: Workshop',
+            company: 'Shree Lilai Digital Communication Pvt. Ltd.',
+            date: 'February 2023',
+            location: 'Navi Mumbai',
+        },
     ];
 
     const educationData = [
         {
-            title: 'Master of Computer Applications',
-            company: 'University of Mumbai',
-            date: '2022 - 2024',
-            location: 'Mumbai',
+            title: 'BTech - Artificial Intelligence and Data Science',
+            company: 'Shah and Anchor Kutchhi Engineering College',
+            date: '2024 - 2027',
+            location: 'Chembur, Mumbai',
         },
         {
-            title: 'Bachelor of Computer Science',
-            company: 'Mumbai University',
-            date: '2019 - 2022',
-            location: 'Mumbai',
+            title: 'Diploma - Electronics and Computer Engineering',
+            company: 'Father Agnel Polytechnic',
+            date: '2021 - 2024',
+            location: 'Vashi, Navi Mumbai',
         },
         {
-            title: 'Higher Secondary Certificate',
-            company: 'State Board',
-            date: '2017 - 2019',
-            location: 'Mumbai',
+            title: "Class Xth",
+            company: 'St. Xavier\'s High School',
+            date: '2009 - 2021',
+            location: 'Airoli, Navi Mumbai',
         },
     ];
 
