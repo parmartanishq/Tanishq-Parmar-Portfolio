@@ -1,31 +1,39 @@
 import React from 'react';
 import './AboutSec.css'
 import logo_l6 from '../../assets/l6.jpeg';
+import logo_l12 from '../../assets/l12.JPG';
 import logo_github from '../../assets/github.svg';
 // import logo_download from '../../assets/download.svg';
 import logo_linkedin from '../../assets/linkedin-black.svg';
 import logo_gmail from '../../assets/gmail-black.svg';
-const AboutSec = () => {
+const AboutSec = ({ theme }) => {
+
     return (
 
-        <div className= 'about_sec'>
+        <div className={`about_sec ${theme}`}>
 
-
-            <div className='_imgAS'>
+        <div className='_imgAS'>
                 <div>
-                    <img src={logo_l6}  alt='profile picture' className='_logoAS' />
+                    <img src={theme === 'dark' ? logo_l12 : logo_l6}  alt='profile picture' className='_logoAS' />
                 </div>
-                <div className='_socials'>
-                    <img  src={logo_linkedin} alt='Linkedin' className='_iconSocial' />
+            <div className='_socials'>
+                <a href="https://www.linkedin.com/in/tanishqparmar" target="_blank" rel="noopener noreferrer">
+                    <img src={logo_linkedin} alt='Linkedin' className='_iconSocial' />
+                </a>
+                <a href="https://github.com/tanishqparmar" target="_blank" rel="noopener noreferrer">
                     <img src={logo_github} alt='GitHub' className='_iconSocial' />
+                </a>
+                <a href="mailto:tanishqparmar@example.com">
                     <img src={logo_gmail} alt='Email' className='_iconSocial' />
-                </div>
+                </a>
             </div>
+
+        </div>
             <div className='_text'>
                 <div className='_about'>
                     <h1>Tanishq Parmar</h1>
                     <h2>Full Stack Developer | AI-ML Engineer | Data Science</h2>
-                    <p>B.Tech student in AI and Data Science with a focus on practical, user-driven solutions.Builds intelligent systems like PaperGen that combine machine learning, backend development, and clean UI design.</p>
+                    <p>B.Tech student in AI and Data Science with a focus on practical, user-driven solutions. Builds intelligent systems like PaperGen that combine machine learning, backend development, and clean UI design.</p>
                 </div>
                 <div className='_buttonResume'>
                     <a href="/files/TanishqParmarResume.pdf" download={'TanishqParmar_Resume'} target='_blank' rel='noopener noreferrer'>

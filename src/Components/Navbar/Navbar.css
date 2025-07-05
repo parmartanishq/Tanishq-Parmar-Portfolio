@@ -11,6 +11,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px); /* Add blur effect for modern look */
     /*background: rgba(249, 250, 251, 0.95); !* Semi-transparent background *!*/
 }
@@ -241,6 +242,7 @@
     box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding: 16px 0 20px 0;
+    transition: all 0.3s ease;
 }
 
 ._mobile-bottom-nav-content {
@@ -386,6 +388,7 @@
         font-size: 16px;
         padding: 12px 5%;
     }
+
 }
 
 /* Smooth scrolling for the entire page */
@@ -426,4 +429,78 @@ html {
     section {
         scroll-margin-bottom: 90px;
     }
+}
+
+
+/* ===== DARK MODE STYLES ===== */
+.navbar.dark {
+    background: #0F172A; /* dark navy with blur */
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+}
+.navbar.light {
+    transition: all 0.3s ease;
+}
+
+.navbar.dark ._nav li {
+    color: #F8FAFC;
+}
+
+.navbar.dark ._nav li:hover {
+    color: #3B82F6;
+}
+
+._nav-mobile.dark {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+._nav-mobile.dark li {
+    color: #F8FAFC;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+._nav-mobile.dark li:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #93C5FD;
+}
+
+._hamburger span {
+    background: #1F2937;
+}
+
+.navbar.dark ._hamburger span {
+    background: #F8FAFC;
+}
+
+._mobile-bottom-nav.dark {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+_mobile-toggle.dark img{
+    filter: brightness(0) invert(1);
+}
+.navbar.dark .icon-white img {
+    filter: brightness(0) invert(1);
+}
+.navbar.dark ._logo  {
+    background: white;
+}
+.navbar.dark ._mobile-toggle img {
+    filter: brightness(0) invert(1);
+}
+
+._mobile-bottom-nav.dark ._mobile-right-buttons img {
+    filter: brightness(0) invert(1);
+}
+._mobile-bottom-nav.dark ._mobile-right-buttons span {
+    filter: brightness(0) invert(1);
+}
+
+._mobile-bottom-nav.dark ._mobile-logo img{
+    background: white
+}
+._mobile-bottom-nav.dark {
+    transition: all 0.3s ease;
 }

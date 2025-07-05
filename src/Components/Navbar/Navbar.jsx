@@ -5,12 +5,9 @@ import logo_dark from '../../assets/dark-mode.svg';
 import logo_home from '../../assets/logo_home.png';
 
 
-const Navbar = ({theme, setTheme}) => {
+const Navbar = ({theme, toggleTheme}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleTheme = () => {
-        theme === 'light' ? setTheme('dark') : setTheme('light');
-    }
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -41,8 +38,8 @@ const Navbar = ({theme, setTheme}) => {
     return (
         <>
             {/* Desktop Navigation */}
-            <div className='navbar'>
-                <div>
+            <div className={`navbar ${theme === 'dark' ? 'dark' : ''}`}>
+            <div>
                     <img src={logo_home} alt="Logo" className='_logo'/>
                     {/*<text className='_txt'>Tanishq Parmar</text>*/}
                 </div>
@@ -58,19 +55,20 @@ const Navbar = ({theme, setTheme}) => {
                     </ul>
                 </div>
 
-                <div>
+                <div className='icon-white'>
                     <img
-                        onClick={() => {toggleTheme()}}
+                        onClick={toggleTheme}
                         src={theme === 'light' ? logo_light : logo_dark}
                         alt="Theme toggle"
                         className='_toggle-icon'
                     />
+
                 </div>
             </div>
 
             {/* Mobile Bottom Navigation */}
-            <div className='_mobile-bottom-nav'>
-                <div className='_mobile-bottom-nav-content'>
+            <div className={`_mobile-bottom-nav ${theme === 'dark' ? 'dark' : ''}`}>
+            <div className='_mobile-bottom-nav-content'>
                     {/* Logo - EXTREME LEFT */}
                     <div className='_mobile-logo'>
                         <img src={logo_home} alt="Logo" />
@@ -79,14 +77,10 @@ const Navbar = ({theme, setTheme}) => {
                     {/* Right side container - Theme Toggle and Menu Button */}
                     <div className='_mobile-right-buttons'>
                         {/* Theme Toggle - LEFT OF MENU BUTTON */}
-                        <div
-                            className='_mobile-toggle'
-                            onClick={() => {toggleTheme()}}
-                        >
-                            <img
-                                src={theme === 'light' ? logo_light : logo_dark}
-                                alt="Theme toggle"
-                            />
+                        <div className='_mobile-toggle'
+                            onClick={() => {toggleTheme()}}>
+                            <img src={theme === 'light' ? logo_light : logo_dark}
+                                alt="Theme toggle"/>
                         </div>
 
                         {/* Menu Button - EXTREME RIGHT */}
@@ -102,8 +96,8 @@ const Navbar = ({theme, setTheme}) => {
             </div>
 
             {/* Mobile Navigation Menu */}
-            <div className={`_nav-mobile ${isMenuOpen ? '_nav-mobile-open' : ''}`}>
-                <div className='_nav-mobile-content'>
+            <div className={`_nav-mobile ${isMenuOpen ? '_nav-mobile-open' : ''} ${theme === 'dark' ? 'dark' : ''}`}>
+            <div className='_nav-mobile-content'>
                     <ul>
                         {navItems.map((item, index) => (
                             <li key={index} onClick={() => scrollToSection(item.id)}>

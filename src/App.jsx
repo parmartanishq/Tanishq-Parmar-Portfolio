@@ -13,6 +13,9 @@ import Footer from "./Components/Footer/Footer";
 const App = () => {
     const [theme, setTheme] = useState('light');
     const [isLoading, setIsLoading] = useState(true);
+    const toggleTheme = () => {
+        setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    };
 
     useEffect(() => {
         // Scroll to top on page load/reload
@@ -54,11 +57,12 @@ const App = () => {
             {/* Main Content - Original Structure with subtle fade-in */}
             <section className={`container ${theme} ${!isLoading ? 'content-loaded' : ''}`}>
                 <section>
-                    <Navbar theme={theme} setTheme={setTheme} />
+                    <Navbar theme={theme} toggleTheme={toggleTheme} />
+
                 </section>
 
                 <section id="home">
-                    <AboutSec />
+                    <AboutSec theme={theme} />
                 </section>
 
                 <section id="experience">
