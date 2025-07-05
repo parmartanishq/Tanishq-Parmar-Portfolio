@@ -5,18 +5,14 @@ import logo_linkedin from '../../assets/linkedin-black.svg';
 import logo_gmail from '../../assets/gmail-black.svg';
 
 
-const Footer = () => {
+const Footer = ({theme}) => {
     return (
-        <footer className="footer">
-            <div className="footer-container">
+        <footer className={`footer ${theme === 'dark' ? 'dark' : ''}`}>
+        <div className="footer-container">
                 {/* Social Media Icons */}
                 <div className="social-icons">
                     <a
-                        href="https://linkedin.com/in/tanishqparmar"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-link"
-                        aria-label="LinkedIn Profile"
+                        href="https://linkedin.com/in/tanishqparmar" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn Profile"
                     >
                         <img
                             src= {logo_linkedin}

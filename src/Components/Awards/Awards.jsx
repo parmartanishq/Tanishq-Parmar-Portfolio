@@ -9,7 +9,7 @@ import img_agnel from '../../assets/AwardsImages/Agnel.jpg';
 import img_jonda from '../../assets/AwardsImages/Jondhle.jpg';
 import img_thakur from '../../assets/AwardsImages/Thakur.jpg';
 // import logo_external_link from "../../assets/logo_external_link.svg";
-const Awards = () => {
+const Awards = ({theme}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
@@ -116,8 +116,8 @@ const Awards = () => {
     };
 
     return (
-        <div className="awards_section">
-            <div className="_header">
+        <div className={`awards_section ${theme === 'dark' ? 'dark' : ''}`}>
+        <div className="_header">
                 <span className='_heading'>Awards & Achievements</span>
             </div>
 

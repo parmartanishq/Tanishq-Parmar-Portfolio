@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     background: #F9FAFB;
+    transition: all 0.3s ease;
 }
 ._publications{
     display: flex;
@@ -29,7 +30,7 @@
     border: 1px solid #E5E7EB;          /* light gray border */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); /* soft shadow */
     color: #1F2937;                     /* primary dark text */
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow,all 0.3s ease;
 }
 ._publicCard h2{
     font-size: 19px;
@@ -48,3 +49,32 @@
     opacity: 1;
 }
 
+.public_sec.dark {
+    background: #0F172A; /* Dark background */
+    transition: all 0.3s ease;
+}
+
+.public_sec.dark ._heading {
+    color: #F8FAFC; /* Light heading text */
+}
+
+.public_sec.dark ._publicCard {
+    background: #1E293B;  /* Dark card background */
+    color: #E2E8F0;        /* Light text */
+    border: 1px solid #334155;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.04);
+    transition: all 0.3s ease;
+}
+
+.public_sec.dark ._publicCard h4 {
+    color: #3B82F6; /* Accent color for metadata */
+}
+
+.public_sec.dark ._externalIcon {
+    filter: brightness(1.2) invert(1); /* Make icon light-friendly */
+    opacity: 0.7;
+}
+
+.public_sec.dark ._publicCard:hover ._externalIcon {
+    opacity: 1;
+}

@@ -40,10 +40,11 @@ const publicationData = [
     },
 ]
 
-const Publications = () => {
+const Publications = ({ theme }) => {
   return (
-    <div className="public_sec">
-        <div className="_header">
+      <div className={`public_sec ${theme === 'dark' ? 'dark' : ''}`}>
+
+      <div className="_header">
             <span className='_heading'>Publications</span>
         </div>
         <div className='_publications'>

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Certificates.css'
 import './testing.css'
-import logo_frontend from "../../assets/logo_frontend.svg";
 import logo_external_link from "../../assets/logo_external_link.svg";
 
 const _Certificates = ({title,course_by,description,link}) => {
@@ -22,7 +21,7 @@ const _Certificates = ({title,course_by,description,link}) => {
        </>
     )
 }
-const Certificates = () => {
+const Certificates = ({ theme }) => {
 
     const certificateData = [
         {
@@ -51,8 +50,8 @@ const Certificates = () => {
         },
     ]
   return (
-    <div className={'certi_sec'}>
-        <div className="_header">
+      <div className={`certi_sec ${theme === 'dark' ? 'dark' : ''}`}>
+      <div className="_header">
             <span className='_heading'>Certificates</span>
         </div>
         <div className={'_certificates'}>

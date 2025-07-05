@@ -1,6 +1,7 @@
 import React from 'react';
 import './Experience.css';
 import { useState, useEffect } from 'react';
+import { Briefcase, GraduationCap } from 'lucide-react';
 
 function useIsMobile(maxWidth = 768) {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= maxWidth);
@@ -76,10 +77,12 @@ const _Experience = ({ title, company, date, location, left, isMobile }) => {
     );
 };
 
-const Experience = () => {
-    const isMobile = useIsMobile(768);
+const Experience = ({ theme }) => {
 
-    const experienceData = [
+    const isMobile = useIsMobile(768);
+    const [activeTab, setActiveTab] = useState('professional');
+
+    const professionalData = [
         {
             title: 'Android Development Intern',
             company: 'DeveloperOnGo Pvt. Ltd.',
@@ -106,27 +109,87 @@ const Experience = () => {
         },
     ];
 
+    const educationData = [
+        {
+            title: 'Master of Computer Applications',
+            company: 'University of Mumbai',
+            date: '2022 - 2024',
+            location: 'Mumbai',
+        },
+        {
+            title: 'Bachelor of Computer Science',
+            company: 'Mumbai University',
+            date: '2019 - 2022',
+            location: 'Mumbai',
+        },
+        {
+            title: 'Higher Secondary Certificate',
+            company: 'State Board',
+            date: '2017 - 2019',
+            location: 'Mumbai',
+        },
+    ];
+
     return (
-        <div className="exp_sec">
-            <div className="_header">
+        <div className={`exp_sec ${theme === 'dark' ? 'dark' : ''}`}>
+
+        <div className="_header">
                 <span className='_heading'>Experience</span>
-                <span className='_heading'>Education</span>
             </div>
-            <span className='_expDecor'>
-                <div className="_expSpan">
-                    {experienceData.map((item, index) => (
-                        <_Experience
-                            key={index}
-                            title={item.title}
-                            company={item.company}
-                            date={item.date}
-                            location={item.location}
-                            left={index % 2 === 0}
-                            isMobile={isMobile}
-                        />
-                    ))}
+            <div className={'_subheading'}>
+                <span
+                    className={activeTab === 'professional' ? 'active' : ''}
+                    onClick={() => setActiveTab('professional')}
+                >
+                    <Briefcase size={20} />
+                    Professional
+                </span>
+                <span
+                    className={activeTab === 'education' ? 'active' : ''}
+                    onClick={() => setActiveTab('education')}
+                >
+                    <GraduationCap size={20} />
+                    Education
+                </span>
+            </div>
+            <div className="_contentContainer">
+                <div className={`_contentSlider ${activeTab === 'education' ? 'showEducation' : ''}`}>
+                    <div className="_slideContent professional">
+                        <span className='_expDecor'>
+                            <div className="_expSpan">
+                                {professionalData.map((item, index) => (
+                                    <_Experience
+                                        key={index}
+                                        title={item.title}
+                                        company={item.company}
+                                        date={item.date}
+                                        location={item.location}
+                                        left={index % 2 === 0}
+                                        isMobile={isMobile}
+                                    />
+                                ))}
+                            </div>
+                        </span>
+                    </div>
+                    <div className="_slideContent education">
+                        <span className='_expDecor'>
+                            <div className="_expSpan">
+                                {educationData.map((item, index) => (
+                                    <_Experience
+                                        key={index}
+                                        title={item.title}
+                                        company={item.company}
+                                        date={item.date}
+                                        location={item.location}
+                                        left={index % 2 === 0}
+                                        isMobile={isMobile}
+                                    />
+                                ))}
+                            </div>
+                        </span>
+                    </div>
                 </div>
-            </span>
+            </div>
         </div>
     );
 };

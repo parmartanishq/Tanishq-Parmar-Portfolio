@@ -3,7 +3,8 @@ import './Skills.css'
 import logo_frontend from '../../assets/logo_frontend.svg';
 import logo_backend from '../../assets/logo_backend.svg';
 import logo_tools from '../../assets/logo_tools.svg';
-const Skills = () => {
+
+const Skills = ({ theme }) => {
     const front_skills = [
         'React',
         'JavaScript',
@@ -11,7 +12,7 @@ const Skills = () => {
         'CSS',
     ]
     return (
-        <div className="skills_sec">
+        <div className={`skills_sec ${theme === 'dark' ? 'dark' : ''}`}>
 
             <div className="_header">
                 <span className='_heading'>Skills</span>

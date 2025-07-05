@@ -4,6 +4,7 @@
     flex-direction: column;
     background: #F9FAFB; /* light background */
     padding: 20px;
+    transition: all 0.3s ease;
 }
 
 ._skills {
@@ -36,7 +37,7 @@
     font-size: 12px;
     border: 1px solid #E5E7EB;          /* soft border */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* subtle card shadow */
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow,all 0.3s ease;
     grid-template-columns: max-content 2fr;
 
     @media(width <= 60em){
@@ -110,4 +111,34 @@
         justify-self: center;
     }
 
+}
+
+.skills_sec.dark {
+    background: #0F172A; /* dark navy */
+    transition: all 0.3s ease;
+}
+
+.skills_sec.dark ._heading {
+    color: #F8FAFC; /* light text */
+}
+
+.skills_sec.dark ._skillCard {
+    background: #1E293B; /* deep slate card */
+    border: 1px solid #334155;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.skills_sec.dark ._skillDescribe h4 {
+    color: #E2E8F0; /* light gray heading */
+}
+
+.skills_sec.dark ._skillDescribe span {
+    color: #94A3B8; /* muted subtext */
+}
+
+.skills_sec.dark ._skillList li {
+    background: #1D4ED8; /* darker blue pill */
+    color: white;
+    border: none;
 }

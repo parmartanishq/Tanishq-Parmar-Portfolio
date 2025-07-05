@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import './Projects.css';
 
-const Projects = () => {
+const Projects = ({theme}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
@@ -101,8 +101,9 @@ const Projects = () => {
     };
 
     return (
-        <div className="projects_section">
-            <div className="_header">
+        <div className={`projects_section ${theme === 'dark' ? 'dark' : ''}`}>
+
+        <div className="_header">
                 <span className='_heading'>Projects</span>
             </div>
 

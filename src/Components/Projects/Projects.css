@@ -5,6 +5,7 @@
     align-items: center;
     background: #F9FAFB;
     padding: clamp(20px, 4vw, 40px) clamp(10px, 2vw, 20px);
+    transition: all 0.3s ease;
 }
 
 
@@ -108,6 +109,7 @@
     display: flex;
     flex-direction: row;
     min-height: 0;
+    transition: all 0.3s ease;
 }
 
 .project_card:hover {
@@ -125,6 +127,7 @@
     justify-content: center;
     padding: clamp(15px, 3vw, 25px);
     background: #ffffff;
+    transition: all 0.3s ease;
 }
 
 .project_image {
@@ -153,6 +156,7 @@
     background: #ffffff;
     min-width: 0;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .project_title {
@@ -247,6 +251,7 @@
 @media (max-width: 768px) {
     .project_card {
         flex-direction: column;
+        transition: all 0.3s ease;
     }
 
     .project_image_container {
@@ -293,4 +298,74 @@
     .project_description {
         -webkit-line-clamp: 2;
     }
+}
+
+.projects_section.dark {
+    background: #0F172A;
+    transition: background 0.3s ease;
+}
+
+.projects_section.dark ._heading {
+    color: #F8FAFC;
+}
+
+.projects_section.dark .project_card {
+    background: #1E293B;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.02);
+}
+
+.projects_section.dark .project_image_container {
+    background: #1E293B;
+}
+
+.projects_section.dark .project_image {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.projects_section.dark .project_content {
+    background: #1E293B;
+}
+
+.projects_section.dark .project_title {
+    color: #F8FAFC;
+}
+
+.projects_section.dark .project_description {
+    color: #94A3B8;
+}
+
+.projects_section.dark .carousel_dot {
+    background: #475569;
+}
+
+.projects_section.dark .carousel_dot.active {
+    background: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.projects_section.dark .carousel_arrow {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+.projects_section.dark .carousel_arrow svg {
+    color: #E2E8F0;
+}
+
+.projects_section.dark .carousel_arrow:hover {
+    background: #3B82F6;
+    border-color: #3B82F6;
+}
+
+.projects_section.dark .carousel_arrow:hover svg {
+    color: #ffffff;
+}
+
+.projects_section.dark .view_project_btn {
+    background: #3B82F6;
+}
+
+.projects_section.dark .view_project_btn:hover {
+    background: #2563EB;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
 }
