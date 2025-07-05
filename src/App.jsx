@@ -9,6 +9,7 @@ import Publications from "./Components/Publications/Publications";
 import Awards from "./Components/Awards/Awards";
 import Projects from "./Components/Projects/Projects";
 import Footer from "./Components/Footer/Footer";
+import Contact from "./Components/Contact/Contact";
 
 const App = () => {
     const [theme, setTheme] = useState('light');
@@ -66,32 +67,36 @@ const App = () => {
                 </section>
 
                 <section id="experience">
-                    <Experience />
+                    <Experience theme={theme} />
                 </section>
 
                 <section id="skills">
-                    <Skills />
+                    <Skills theme={theme} />
                 </section>
 
                 <section id="certification">
-                    <Certificates />
+                    <Certificates theme={theme} />
                 </section>
 
                 <section id="publications">
-                    <Publications />
+                    <Publications theme={theme}/>
                 </section>
 
                 <section id="projects">
-                    <Projects />
+                    <Projects theme={theme}/>
                 </section>
 
                 <section id="awards">
-                    <Awards />
+                    <Awards theme={theme} />
+                </section>
+                <section id="contact">
+                    <Contact theme={theme} />
+                </section>
+                <section id="contact">
+                    <Footer theme={theme} />
                 </section>
 
-                <section id="contact">
-                    <Footer />
-                </section>
+
             </section>
         </>
     )
