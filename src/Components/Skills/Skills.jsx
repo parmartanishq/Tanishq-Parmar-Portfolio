@@ -7,9 +7,32 @@ import logo_tools from '../../assets/logo_tools.svg';
 const Skills = ({ theme }) => {
     const front_skills = [
         'React',
-        'JavaScript',
         'Html',
         'CSS',
+        'Bootstrap',
+        'Flutter',
+
+    ]
+    const back_skills = [
+        'Python',
+        'Django',
+        'Flask',
+        'Java',
+        'JavaScript',
+        'MySQL',
+        'Android',
+        'C/C++',
+
+    ]
+    const tool_skills = [
+       'Figma',
+       'Motiff',
+        'IoT',
+       'Bubble.io',
+        'Git',
+       'Version Control',
+
+
     ]
     return (
         <div className={`skills_sec ${theme === 'dark' ? 'dark' : ''}`}>
@@ -37,10 +60,10 @@ const Skills = ({ theme }) => {
                     <div className='_skillCard'>
 
                         <div className='_skillDescribe'>
-                            <h4> Front End Technologies </h4>
-                            <span> Creating responsive and interactive user interfaces</span>
+                            <h4>Back End Technologies</h4>
+                            <span>Handling server logic, databases, and API integrations</span>
                             <ul className='_skillList'>
-                                {front_skills.map((skill, index) => (
+                                {back_skills.map((skill, index) => (
                                     <li key={index}>{skill}</li>
                                 ))}
                             </ul>
@@ -53,10 +76,10 @@ const Skills = ({ theme }) => {
                         <div className='_skillCard'>
 
                             <div className='_skillDescribe'>
-                                <h4> Front End Technologies </h4>
-                                <span> Creating responsive and interactive user interfaces</span>
+                                <h4>Technologies & Tools</h4>
+                                <span>Essential frameworks, platforms, and services for efficient development</span>
                                 <ul className='_skillList'>
-                                    {front_skills.map((skill, index) => (
+                                    {tool_skills.map((skill, index) => (
                                         <li key={index}>{skill}</li>
                                     ))}
                                 </ul>

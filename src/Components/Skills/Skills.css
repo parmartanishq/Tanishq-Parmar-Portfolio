@@ -10,7 +10,9 @@
 ._skills {
     display: flex;
     justify-content: center;
-    margin: 30px 1px;
+    margin: 30px auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 ._skill {
@@ -19,34 +21,39 @@
     row-gap: 15px;
     margin-top: 20px;
     padding: 20px;
+    width: 100%;
     @media(width <= 40em){
         grid-template-columns: repeat(1, 1fr);
     }
-    @media(width > 60em){
+    @media(width > 40em) and (width <= 60em){
         grid-template-columns: repeat(2, 1fr);
     }
-
+    @media(width > 60em){
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 ._skillCard {
-    display: grid;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     background: #FFFFFF;                /* white card */
     border-radius: 20px;
-    padding: 15px 10px;
+    padding: 20px;
     font-size: 12px;
     border: 1px solid #E5E7EB;          /* soft border */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* subtle card shadow */
     transition: box-shadow,all 0.3s ease;
-    grid-template-columns: max-content 2fr;
+    height: 100%;
 
     @media(width <= 60em){
+        text-align: center;
+        display: grid;
         grid-template-columns: repeat(1, 4fr);
         grid-template-areas:
             "icon"
             "text";
     }
-
 }
 
 ._skillCard:hover {
@@ -56,11 +63,14 @@
 ._skillIcon {
     align-items: center;
     justify-content: center;
-    margin: 20px;
     display: flex;
     @media(width <= 60em){
-    grid-area: icon;
-        }
+        grid-area: icon;
+        margin: 20px;
+    }
+    @media(width > 60em){
+        margin-bottom: 10px;
+    }
 }
 
 ._skillIcon img {
@@ -68,49 +78,72 @@
 }
 
 ._skillDescribe {
-    margin: 10px;
+    flex: 1;
     @media(width <= 60em){
         grid-area: text;
+        margin: 10px;
+    }
+    @media(width > 60em){
+        text-align: center;
     }
 }
 
+._centered {
+    @media(width < 961px) and (width > 640px){
+        grid-column: 1 / span 2;
+        justify-self: center;
+    }
+}
 ._skillDescribe h4 {
     font-size: 20px;
     color: #1F2937; /* dark gray text */
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    @media(width > 60em){
+        font-size: 18px;
+    }
 }
 
 ._skillDescribe span {
     color: #4B5563; /* medium gray for subtext */
     font-size: 14px;
+    display: block;
+    margin-bottom: 15px;
+    @media(width > 60em){
+        font-size: 13px;
+        line-height: 1.4;
+    }
 }
 
 ._skillList {
-    flex: 1;
     list-style: none;
-    text-align: left;
-    margin-top: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    @media(width > 60em){
+        text-align: center;
+    }
 }
 
 ._skillList li {
     display: inline-block;
-    margin-right: 10px;
-    margin-top: 10px;
-    padding: 5px 10px;
+    margin: 3px 2px;
+    padding: 6px 12px;
     border: 1px solid #cce0ff;        /* soft border */
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 13px;
     background: #EFF6FF;              /* light blue bg */
     color: #2563EB;                   /* blue text */
     font-weight: 500;
+    @media(width > 60em){
+        margin-right: 6px;
+        margin-bottom: 6px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
 }
 
 ._centered {
-    @media(width > 40em){
-        grid-column: 1 / span 2;
-        justify-self: center;
-    }
-
+    /* Remove the centering behavior since we now have 3 columns */
 }
 
 .skills_sec.dark {
