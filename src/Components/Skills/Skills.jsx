@@ -25,6 +25,7 @@ const Skills = ({ theme }) => {
 
     ]
     const tool_skills = [
+        'TensorFLow',
        'Figma',
        'Motiff',
         'IoT',
