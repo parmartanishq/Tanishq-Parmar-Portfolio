@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import './Projects.css';
-
+import logo_papergen from '../../assets/project_logo/papergen.png'
+import logo_withyou from '../../assets/project_logo/withyou.png'
+import logo_hiki from '../../assets/project_logo/hiki.svg'
+import logo_library from '../../assets/project_logo/library.png'
 const Projects = ({theme}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [touchStart, setTouchStart] = useState(null);
@@ -11,53 +14,33 @@ const Projects = ({theme}) => {
     const projects = [
         {
             id: 1,
-            title: "E-Commerce Platform with React & Node.js",
-            image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-            description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard for inventory management.",
-            link: "https://github.com/example/ecommerce-platform"
+            title: "PaperGen: AI-Integrated Platform for Dynamic Learning Material Creation",
+            image: logo_papergen,
+            description: "Developed a Flask web app that auto generates quizzes, mini-project ideas, and presentation topics from syllabus files using Gemini 1.5 Flash API, real-time feedback, and PDF/TXT content extraction via PyPDF2 and pdfplumber.\n",
+            link: "https://github.com/parmartanishq/PaperGen-Quiz-MiniProject-Assignments-Generator-AI"
         },
         {
             id: 2,
-            title: "AI-Powered Task Management System",
-            image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
-            description: "An intelligent task management application that uses machine learning to prioritize tasks, predict completion times, and suggest optimal work schedules. Built with Python, Flask, and TensorFlow.",
-            link: "https://github.com/example/ai-task-manager"
+            title: "WithYou: A Therapy Web Application",
+            image: logo_withyou,
+            description: "Developed \"With You\", a mental health platform on Bubble.io featuring therapist booking, social feeds, group chats, and personalized support tools, with a customizable user system and cross-platform deployment potential.\n",
+            link: "https://github.com/parmartanishq/WithYou-A-Therapy-Web-Application"
         },
         {
             id: 3,
-            title: "Real-Time Chat Application",
-            image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
-            description: "A modern real-time chat application with features like group chats, file sharing, emoji reactions, and message encryption. Developed using React, Socket.io, and Express.js.",
-            link: "https://github.com/example/realtime-chat"
+            title: "Hisaab Kitaab: An Expense Planner (UI/UX Design) ",
+            image: logo_hiki,
+            description: "Designed a modern expense tracking app with an intuitive UI, featuring a dynamic calendar for reminders, an interactive dashboard for spending insights, and efficient bank account management.\n",
+            link: "https://www.figma.com/design/BhUCvoFALRW2wTBnB0jFOw/HiKi_UI_prototype?node-id=0-1&t=8xAnFefy7uFuebym-1"
         },
         {
             id: 4,
-            title: "Weather Forecast Dashboard",
-            image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
-            description: "A comprehensive weather dashboard that displays current conditions, 7-day forecasts, and weather maps. Integrates multiple weather APIs and features location-based services with interactive charts.",
-            link: "https://github.com/example/weather-dashboard"
+            title: "Library Management System",
+            image: logo_library,
+            description: "Developed a Java-MySQL based library management system with book issue/return tracking, an admin panel for employee management, and a librarian section for handling books, magazines, and archives.\n",
+            link: "https://github.com/parmartanishq/LibraryManagementSystem"
         },
-        {
-            id: 5,
-            title: "Blockchain Voting System",
-            image: "https://images.pexels.com/photos/8369648/pexels-photo-8369648.jpeg?auto=compress&cs=tinysrgb&w=800",
-            description: "A secure and transparent voting system built on blockchain technology using Ethereum smart contracts. Ensures vote integrity, anonymity, and provides real-time election results with complete audit trails.",
-            link: "https://github.com/example/blockchain-voting"
-        },
-        {
-            id: 6,
-            title: "Social Media Analytics Tool",
-            image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
-            description: "A comprehensive analytics platform for social media management that tracks engagement metrics, analyzes audience demographics, and provides insights for content optimization across multiple platforms.",
-            link: "https://github.com/example/social-analytics"
-        },
-        {
-            id: 7,
-            title: "IoT Home Automation System",
-            image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800",
-            description: "An Internet of Things solution for smart home automation featuring remote control of lights, temperature, security systems, and appliances through a mobile app and voice commands.",
-            link: "https://github.com/example/iot-home-automation"
-        }
+
     ];
 
     const nextSlide = () => {
