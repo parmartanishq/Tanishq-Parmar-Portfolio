@@ -406,7 +406,6 @@ html {
 /* Active state for navigation items */
 ._nav li.active {
     color: #2563EB;
-    background: rgba(37, 99, 235, 0.1);
 }
 
 ._nav li.active::after {

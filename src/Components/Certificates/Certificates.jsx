@@ -52,7 +52,7 @@ const Certificates = ({ theme }) => {
   return (
       <div className={`certi_sec ${theme === 'dark' ? 'dark' : ''}`}>
       <div className="_header">
-            <span className='_heading'>Certificates</span>
+            <span className='_heading'>Certifications</span>
         </div>
         <div className={'_certificates'}>
             <div className='_certificate'>

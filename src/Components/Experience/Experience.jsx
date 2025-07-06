@@ -103,7 +103,7 @@ const Experience = ({ theme }) => {
         },
 
         {
-            title: 'Java Programming: Workshop',
+            title: 'Java Development: Workshop',
             company: 'Shree Lilai Digital Communication Pvt. Ltd.',
             date: 'February 2023',
             location: 'Navi Mumbai',
