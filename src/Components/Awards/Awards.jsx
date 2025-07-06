@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import './Awards.css';
-import img_award from '../../assets/AwardsImages/Award.JPEG';
+import img_award from '../../assets/AwardsImages/Award.svg';
 import img_national from '../../assets/AwardsImages/National.jpg';
 import img_msbte from '../../assets/AwardsImages/MSBTE.jpg';
 import img_swami from '../../assets/AwardsImages/Swami.jpg';
