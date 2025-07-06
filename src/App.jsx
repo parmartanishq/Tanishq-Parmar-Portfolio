@@ -10,6 +10,8 @@ import Awards from "./Components/Awards/Awards";
 import Projects from "./Components/Projects/Projects";
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact/Contact";
+import ScrollToTopButton from './Components/ScrollToTopButton.jsx';
+
 
 const App = () => {
     const [theme, setTheme] = useState('light');
@@ -95,6 +97,7 @@ const App = () => {
                 <section id="contact">
                     <Footer theme={theme} />
                 </section>
+              <ScrollToTopButton/>
 
 
             </section>

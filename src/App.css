@@ -1,8 +1,8 @@
-
 /* ===== SCROLL TO TOP & CONTENT TRANSITION ===== */
 html {
   scroll-behavior: smooth;
 }
+
 /* ===== LOADER STYLES ===== */
 .loader {
   position: fixed;
@@ -19,7 +19,6 @@ html {
   z-index: 9999;
   animation: fadeIn 0.3s ease-in;
 }
-
 
 .loader-content {
   text-align: center;
@@ -44,7 +43,6 @@ html {
   background: linear-gradient(135deg, rgba(240, 249, 255, 0.3) 0%, rgba(224, 231, 255, 0.3) 100%);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
   border-radius: 0 0 30px 30px;
   position: relative;
   margin: 0 auto;
@@ -129,6 +127,113 @@ html {
   animation: progress 1.5s ease-in-out;
 }
 
+/* ===== SCROLL TO TOP BUTTON ===== */
+.scroll-to-top-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-to-top-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-to-top-btn {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.scroll-to-top-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #1D4ED8, #1E40AF);
+}
+
+.scroll-to-top-btn:active {
+  transform: scale(0.95);
+}
+
+.scroll-to-top-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.scroll-to-top-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top-btn:active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Tooltip */
+.scroll-to-top-container::after {
+  content: 'Back to top';
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.scroll-to-top-container::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 12px;
+  margin-bottom: 2px;
+  border: 4px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top-container:hover::after,
+.scroll-to-top-container:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /* ===== KEYFRAME ANIMATIONS ===== */
 @keyframes steamRise {
   0% {
@@ -177,7 +282,7 @@ html {
 }
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .tea-cup {
     width: 60px;
     height: 60px;
@@ -206,5 +311,28 @@ html {
 
   .progress-bar {
     width: 200px;
+  }
+
+  /* Smaller button on mobile */
+  .scroll-to-top-container {
+    bottom: 60px;
+    right: 28px;
+  }
+
+  .scroll-to-top-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top-container {
+    bottom: 60px;
+    right: 18px;
+  }
+
+  .scroll-to-top-btn {
+    width: 30px;
+    height: 30px;
   }
 }
