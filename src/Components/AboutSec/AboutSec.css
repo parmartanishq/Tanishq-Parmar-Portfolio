@@ -7,6 +7,7 @@
     padding: 30px 6%;
     gap: 5px;
     transition: all 0.3s ease;
+    position: relative; /* Added for scroll indicator positioning */
     @media (width<=45em) {
         flex-direction: column;
 
@@ -132,9 +133,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 10px;
-    gap: 5px;
+    gap: 8px;
     background-color: #2563EB;       /* Primary blue */
     color: white;
     padding: 10px 20px;
@@ -144,15 +145,15 @@
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-
-
 }
 
 ._buttonResume span {
     color: white;
 }
+
 ._buttonResume a{
     text-decoration: none;
+    color: white;
 }
 
 ._buttonResume:hover {
@@ -167,6 +168,59 @@
     justify-content: center;
 }
 
+/* Scroll Down Indicator - Desktop Only */
+._scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+._scroll-indicator:hover {
+    opacity: 1;
+    transform: translateX(-4px);
+}
+
+._scroll-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B7280;
+    letter-spacing: 0.5px;
+}
+
+._scroll-arrow {
+    width: 20px;
+    height: 20px;
+    color: #6B7280;
+    animation: bounce-right 2s infinite;
+    transform: rotate(90deg);
+}
+
+/* Hide on mobile */
+@media (max-width: 890px) {
+    ._scroll-indicator {
+        display: none;
+    }
+}
+
+/* Bounce animation for arrow */
+@keyframes bounce-right {
+    0%, 20%, 50%, 80%, 100% {
+        transform: rotate(90deg) translateY(0);
+    }
+    40% {
+        transform: rotate(90deg) translateY(4px);
+    }
+    60% {
+        transform: rotate(90deg) translateY(2px);
+    }
+}
 
 /* === DARK MODE STYLES === */
 .about_sec.dark {
@@ -202,4 +256,18 @@
 
 .about_sec.dark ._mobile-logo img {
     background: white;
+}
+
+/* Dark mode for scroll indicator */
+.about_sec.dark ._scroll-text {
+    color: #9CA3AF;
+}
+
+.about_sec.dark ._scroll-arrow {
+    color: #9CA3AF;
+}
+
+.about_sec.dark ._scroll-indicator:hover ._scroll-text,
+.about_sec.dark ._scroll-indicator:hover ._scroll-arrow {
+    color: #D1D5DB;
 }
