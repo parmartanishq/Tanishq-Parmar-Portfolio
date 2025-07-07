@@ -16,7 +16,6 @@ This portfolio serves as a digital resume and creative space to highlight who I 
 
 - ⚛️ **React JS** – Core frontend framework
 - 🎨 **HTML & CSS** – Structure and styling
-- 💅 **Tailwind CSS** – Utility-first styling
 - 🌍 **Vercel** – Deployment and hosting
 - 🧠 **JavaScript** – Logic and interactivity
 - 🛠️ **Git & GitHub** – Version control
@@ -67,8 +66,8 @@ This portfolio serves as a digital resume and creative space to highlight who I 
 ## 🛠️ Installation & Setup
 
 ```bash
-git clone https://github.com/yourusername/your-portfolio-repo.git
-cd your-portfolio-repo
+git clone https://github.com/parmartanishq/Tanishq-Parmar-Portfolio.git
+cd myportfolio
 npm install
 npm run dev
 ```
