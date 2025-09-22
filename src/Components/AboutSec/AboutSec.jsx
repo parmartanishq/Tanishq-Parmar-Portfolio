@@ -48,7 +48,7 @@ const AboutSec = ({ theme }) => {
                 </div>
                 <div className='_buttonResume'>
                     <Download size={18} style={{ color: 'white' }} />
-                    <a href="/files/TanishqParmarResume.pdf" download={'TanishqParmar_Resume'} target='_blank' rel='noopener noreferrer'>
+                    <a href="/files/TanishqParmar_CV.pdf" download={'TanishqParmar_Resume'} target='_blank' rel='noopener noreferrer'>
                         <span>Resume</span>
                     </a>
                 </div>
